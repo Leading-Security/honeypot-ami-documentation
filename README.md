@@ -11,7 +11,7 @@ The Leading Security Honeypot AMI is a lightweight, STIG hardened AMI built on t
 ### Dionaea (Credit: https://github.com/DinoTools/dionaea):
 
 * Telnet
-* FTP
+* FTP 
 * HTTP
 * MySQL
 * Memcache
