@@ -5,17 +5,19 @@
 The Leading Security Honeypot AMI is a lightweight, STIG hardened AMI built on top of a base Ubuntu 20 or Ubuntu 22 image. It consists of a set of services designed to emulate other services to be able to track and monitor potential malicious activities in a network where such threats need to be made visible. The following services are currently deployed within the Honeypot AMI with a list of the services they are also emulating as well: 
 
 ### Cowrie (Credit: https://github.com/cowrie/cowrie):
-SSH
+
+* SSH
 
 ### Dionaea (Credit: https://github.com/DinoTools/dionaea):
-Telnet
-FTP
-HTTP
-MySQL
-Memcache
-SAMBA/SMB
-TFTP
-UPNP
+
+* Telnet
+* FTP
+* HTTP
+* MySQL
+* Memcache
+* SAMBA/SMB
+* TFTP
+* UPNP
 
 When requests go to these particular services that are being emulated, log files will be generated in a consistent location under /opt/leadingsecurity/cowrie/logs and /opt/leadingsecurity/dionaea/logs
 
