@@ -98,9 +98,24 @@ After configuring an appropriate security group, you will then be required to se
 
 You should then be able to click create instance at which point your EC2 will start to provision and AWS will provide you an instance ID. You can check the status of the instance by going to EC2 -> Instances -> Search Bar -> Your instance ID provided earlier or by clicking on the instance ID AWS provided when you clicked create instance.
 
-### Migrating logs to Cloudwatch
+### Sending logs remotely to ElasticSearch/Rsyslog
 
-### Migrating logs to ElasticSearch
+The AMI currently supports specifying as part of the user-data on the launch of the AMI the ability to forward logs to a remote destination using RSyslog. Please ensure that you configure your user-data at instance creation ensuring that you set RSYSLOG_ADDRESS and RSYSLOG_PORT values to the values of the destination that you want to forward to:
+
+```bash
+#!/bin/bash
+RSYSLOG_ADDRESS=<YOUR IP HERE>
+RSYSLOG_PORT=<YOUR PORT HERE>
+sed -i 's/<RSYSLOGADDRESS>/'"${RSYSLOG_ADDRESS}"'/g' /etc/rsyslog.conf
+sed -i 's/<RSYSLOGPORT>/'"${RSYSLOG_PORT}"'/g' /etc/rsyslog.conf
+sleep 60
+sudo systemctl enable rsyslog
+sudo systemctl restart rsyslog
+```
+
+Please also ensure that if you have any outbound security group rules in place that you allow outbound access for the Rsyslog port you configure above.
+
+The above configuration will forward both Dionaea and Cowrie logs underneath /opt/leadingsecurity
 
 ### FAQ/Troubleshooting
 
