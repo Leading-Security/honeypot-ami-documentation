@@ -174,3 +174,6 @@ If the security group looks ok, next ensure that you have associated an SSH key-
 In the case where you no longer have access or a need for the Honeypot instance but still wish to get information such as logs or any files from the instance, you can do so by shutting down the instance and then on the storage tab for that instance clicking on the storage device attached to the instance that will be labelled "/dev/sda1". You can then click actions and then detach the volume from the instance. You can then attach this volume to another instance and mount this on the filesystem and access the logs from there. Please see the AWS guide for guidance on mounting an additional device: https://docs.aws.amazon.com/ebs/latest/userguide/ebs-using-volumes.html
 
  
+### Support
+
+If you require any additional support, please reach out at www.leadingsecurity.co.uk
