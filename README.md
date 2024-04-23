@@ -1,5 +1,9 @@
 # Leading Security Honeypot AMI
 
+<p align="center">
+  <img src="./images/honeypot-logo.png" />
+</p>
+
 ## What is the Leading Security Honeypot AMI
 
 The Leading Security Honeypot AMI is a lightweight, STIG hardened AMI built on top of a base Ubuntu 20 or Ubuntu 22 image. It consists of a set of services designed to emulate other services to be able to track and monitor potential malicious activities in a network where such threats need to be made visible. The following services are currently deployed within the Honeypot AMI with a list of the services they are also emulating as well: 
